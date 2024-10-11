@@ -1,0 +1,142 @@
+// .wrapper {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//     height: 20rem;
+//     width: 20rem;
+//     background-color: var(--brick);
+//   position: relative;
+//   perspective: 1000px;
+// }
+
+// .front-img,
+// .back-img {
+//   width: 100%;
+//   height: 100%;
+//   transition: all 0.5s;
+//   backface-visibility: hidden;
+//   cursor: pointer;
+//   transform-style: preserve-3d;
+// }
+
+// .front-img {
+//   width: 80%;
+//   height: 80%;
+//   z-index: 1;
+//   transform: rotateY(180deg); /* Initially hide the front image */
+// }
+
+// .front-img.flipped {
+//   z-index: 2;
+//   transform: rotateY(0deg); /* Show the front image when flipped */
+// }
+
+// .back-img {
+//   width: 80%;
+//   height: 80%;
+//   z-index: 2;
+//   transform: rotateY(0deg); /* Initially show the back image */
+//   position: absolute;
+
+// }
+
+// .back-img.flipped {
+//   z-index: 1;
+//   transform: rotateY(180deg); /* Hide the back image when flipped */
+// }
+
+// .wrapper {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: var(--brick);
+//   perspective: 1000px;
+//   width: 20rem; // Adjust as needed
+//   height: 20rem; // Adjust as needed
+// }
+
+// .card-content {
+//   width: 80%;
+//   height: 80%;
+//   position: relative;
+//   transform-style: preserve-3d;
+//   transition: transform 0.6s;
+// }
+
+// .wrapper.flipped .card-content {
+//   transform: rotateY(180deg);
+// }
+
+// .front-img,
+// .back-img {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   backface-visibility: hidden;
+// }
+
+// .back-img {
+//   transform: rotateY(180deg);
+// }
+
+.wrapper {
+  perspective: 1000px;
+  width: 20rem; // Adjust as needed
+  height: 20rem; // Adjust as needed
+  // background-color: var(--brick);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.initial .card__content {
+    transform: rotateY(180deg);
+  }
+
+  &.flipped .card__content {
+    transform: rotateY(0deg);
+  }
+}
+
+.card {
+  &__content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+  &__face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+      101.1deg,
+      var(--yellowish) -4.8%,
+      var(--brick) 72.7%
+    );
+    border-radius: 2rem;
+    border: 2px solid var(--yellowish);
+
+    & img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    &.back {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__image {
+    border-radius: 2rem;
+    height: 88%;
+    width: 88%;
+  }
+}
+

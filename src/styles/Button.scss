@@ -1,0 +1,67 @@
+.pixel {
+  font-size: 2.5rem;
+  color: var(--yellowish);
+  height: auto;
+  margin: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  line-height: 0;
+
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  border-style: solid;
+  border-width: 20px;
+  -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+  -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+  -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+  border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+
+  &:active {
+    top: 2px;
+    color: var(--brick);
+  }
+
+  & p {
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
+
+    background: #000000;
+    background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
+      linear-gradient(225deg, transparent 10px, #000000 0) top right,
+      linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
+      linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(
+        circle at 0 0,
+        #cc000000 14px,
+        #000000 15px
+      ),
+      radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(
+        circle at 100% 100%,
+        rgba(204, 0, 0, 0) 14px,
+        #000000 15px
+      ),
+      radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
+  }
+}

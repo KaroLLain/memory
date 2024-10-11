@@ -1,0 +1,11 @@
+.difficultySelector {
+  display: flex;
+  justify-content: center;
+
+  &__label {
+    color: var(--yellowish);
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: var(--font-family);
+  }
+}

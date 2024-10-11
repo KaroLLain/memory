@@ -1,0 +1,98 @@
+:root {
+  --plum: #372b39;
+  --brick: #aa634d;
+  --yellowish: #f5e9bf;
+  --sage: #788373;
+
+  --font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: var(--brick);
+}
+
+html {
+  box-sizing: border-box;
+  color: var(--yellowish);
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 400;
+  line-height: 0.9;
+  background-color: var(--plum);
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  align-content: center;
+
+  &__header {
+    padding: 2rem 0;
+    grid-row: 1 / 2;
+    height: 30rem;
+    display: flex;
+    justify-self: center;
+    background-image: url('../assets/hero.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    @media only screen and (max-width: 600px) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__menu {
+    grid-row: 2 / 3;
+    max-width: 100rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+    @media only screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+  }
+
+  &__grid {
+    padding-top: 2rem;
+    grid-row: 3 / 4;
+    max-width: 100rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-self: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+  }
+
+  &__message {
+    font-size: 2.5rem;
+    color: var(--yellowish);
+    margin-left: 2rem;
+  }
+}
