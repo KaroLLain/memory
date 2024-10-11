@@ -3,8 +3,8 @@ import DifficultySelector from './DifficultySelector'
 import Stats from './Stats'
 import Card from './Card'
 import { useStore } from '../store/useStore'
-import { shuffleArray } from './Utils' // Adjust the path if necessary
-import { createBoard } from './Setup' // Correct import for createBoard
+import { shuffleArray } from './Utils'
+import { createBoard } from './Setup'
 import '../styles/App.scss'
 import Button from './Button'
 
