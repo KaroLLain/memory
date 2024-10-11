@@ -3,8 +3,8 @@ import DifficultySelector from './DifficultySelector'
 import Stats from './Stats'
 import Card from './Card'
 import { useStore } from '../store/useStore'
-import { shuffleArray } from './Utils'
-import { createBoard } from './Setup'
+import { shuffleArray } from './Utils' // Adjust the path if necessary
+import { createBoard } from './Setup' // Correct import for createBoard
 import '../styles/App.scss'
 import Button from './Button'
 
@@ -70,7 +70,7 @@ const App: React.FC = () => {
           setDifficulty={setDifficulty}
         />
         <Button startNewGame={startNewGame} />
-        {gameWon && <div className='app__message'>YOU WON!</div>}
+        {gameWon && <div className='app__message'>You Won!</div>}
       </div>
       <div className='app__grid'>
         {cards.map(card => (

@@ -10,8 +10,8 @@ interface GameHistory {
 
 const Stats: React.FC = () => {
   const { attempts, timer, gameHistory } = useStore()
-  const [bestAttempts, setBestAttempts] = useState<number | null>(null)
-  const [bestTime, setBestTime] = useState<number | null>(null)
+  const [bestAttempts, setBestAttempts] = useState<number>(0)
+  const [bestTime, setBestTime] = useState<number>(0)
 
   useEffect(() => {
     const history = localStorage.getItem('gameHistory')
@@ -34,18 +34,14 @@ const Stats: React.FC = () => {
         <span className='label'>Time Elapsed:</span>
         <span className='value'>{timer} sec</span>
       </div>
-      {bestAttempts !== null && (
-        <div className='stat'>
-          <span className='label'>Best Attempts:</span>
-          <span className='value'>{bestAttempts}</span>
-        </div>
-      )}
-      {bestTime !== null && (
-        <div className='stat'>
-          <span className='label'>Best Time:</span>
-          <span className='value'>{bestTime} sec</span>
-        </div>
-      )}
+      <div className='stat'>
+        <span className='label'>Best Attempts:</span>
+        <span className='value'>{bestAttempts}</span>
+      </div>
+      <div className='stat'>
+        <span className='label'>Best Time:</span>
+        <span className='value'>{bestTime} sec</span>
+      </div>
     </div>
   )
 }

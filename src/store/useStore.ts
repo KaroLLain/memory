@@ -18,6 +18,8 @@ interface GameState {
   clickLock: boolean
   gameHistory: GameHistory[]
   difficulty: string
+  bestAttempts: number
+  bestTime: number
   setDifficulty: (difficulty: string) => void
   setCards: (cards: CardType[]) => void
   setGameWon: (won: boolean) => void
@@ -45,6 +47,8 @@ export const useStore = create<GameState>((set, get) => ({
   clickLock: false,
   gameHistory: [],
   difficulty: 'easy', // Default value
+  bestAttempts: 0,
+  bestTime: 0,
   setDifficulty: (difficulty: string) => set({ difficulty }),
   setCards: cards => set({ cards }),
   setGameWon: won => set({ gameWon: won }),
